@@ -1,0 +1,33 @@
+import statistics
+import sys
+import math
+import datetime
+import collections
+import functools
+
+
+def solve():
+    n = int(input())
+    arr = list(map(int, input().split()))
+    arr.sort()
+    f = float("inf")
+    for i in range(n):
+        b = i + 1
+        c = arr[i]
+        if c > b:
+            print("impossible")
+            return
+        else:
+            f = min(f, c / b)
+    print(f)
+
+
+def main():
+    tc = 1
+    # tc = int(input())
+    for i in range(1, tc+1):
+        solve()
+
+
+if __name__ == '__main__':
+    main()
